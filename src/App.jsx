@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+// localStorage shim for non-Claude environments
+if (!window.storage) {
+  window.storage = {
+    get: async (k) => { const v = localStorage.getItem(k); return v ? { value: v } : null; },
+    set: async (k, v) => { localStorage.setItem(k, v); return {}; },
+    delete: async (k) => { localStorage.removeItem(k); return {}; },
+  };
+}
+
 // ═══════════════════════════════════════════════════════════════════
 // WGSL COMPUTE SHADER
 // ═══════════════════════════════════════════════════════════════════
