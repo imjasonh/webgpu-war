@@ -2,7 +2,7 @@
 
 Massively parallel card game simulation using WebGPU compute shaders.
 
-Simulates hundreds of thousands of games of War per second on the GPU, with smooth animated stats, record-breaking game detection, and round-by-round replay.
+Simulates ~millions of games of War per second on the GPU (depending on hardware), with animated stats, record-breaking game detection, and round-by-round replay.
 
 ## How it works
 
